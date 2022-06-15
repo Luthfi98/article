@@ -23,20 +23,24 @@
     </div>
   </div> -->
   <div class="row justify-content-center">
-    <?php foreach ($data as $dt): ?>
-    <div class="col-4 mb-3">
-      <div class="card h-100" style="">
-        <div class="card-body">
-          <h5 class="card-title text-center"><?= $dt['title'] ?></h5>
-          <h6 class="card-subtitle mb-2 text-medium-emphasis"><?= $dt['category'] ?></h6>
-          <p class="card-text"><?= substr(strip_tags($dt['content']), 0,50)."..." ?>
-            <a class="card-link" href="<?= base_url('preview/detail/'.$dt['id']) ?>">View More</a>
-          </p>
-          <!-- <a class="card-link" href="#">Another link</a> -->
+    <?php if ($data): ?>
+      <?php foreach ($data as $dt): ?>
+      <div class="col-4 mb-3">
+        <div class="card h-100" style="">
+          <div class="card-body">
+            <h5 class="card-title text-center"><?= $dt['title'] ?></h5>
+            <h6 class="card-subtitle mb-2 text-medium-emphasis"><?= $dt['category'] ?></h6>
+            <p class="card-text"><?= substr(strip_tags($dt['content']), 0,50)."..." ?>
+              <a class="card-link" href="<?= base_url('preview/detail/'.$dt['id']) ?>">View More</a>
+            </p>
+            <!-- <a class="card-link" href="#">Another link</a> -->
+          </div>
         </div>
       </div>
-    </div>
-    <?php endforeach ?>
+      <?php endforeach ?>
+    <?php else: ?>
+      <h3 class="text-center">Data Not Found</h3>
+    <?php endif ?>
     <nav aria-label="Page navigation example">
       <?= $pagination ?>
       <!-- <ul class="pagination justify-content-center">

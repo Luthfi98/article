@@ -47,7 +47,7 @@ class Posts extends CI_Controller {
 					}else{
 
 						$row[] = '
-		                        <a href="'.base_url("posts/edit/".$article['id']).'" class="btn btn-primary shadow btn-sm sharp mr-1">
+		                        <a href="'.base_url("posts/edit/".$article['id']).'" class="btn btn-warning text-light shadow btn-sm sharp mr-1">
 		                        	<svg class="icon me-2">
 		                        	  <use xlink:href="'._assets().'/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
 		                        	</svg></a>
@@ -114,7 +114,6 @@ class Posts extends CI_Controller {
 					'status' => $this->input->post('status'),
 				];
 				$insert = api('article', $data, "POST");
-
 				$response['error'] = getErrorValidation();
 				$response['status'] = true;
 				$response['alert'] = 'Successfully Added Article';

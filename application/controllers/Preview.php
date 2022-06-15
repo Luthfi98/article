@@ -6,21 +6,9 @@ class Preview extends CI_Controller {
 	public function index()
 	{
 
-		$params = '?status=Publish';
-			// if (@$_POST['length'] != 1){
-			// 	$limit = @$_POST['length'];
-			// 	$offset = @$_POST['start'];
-			// 	// var_dump($offset);die;
-			// 	$params.= '&limit='.$limit.'&offset='.$offset;
-			// }
-
-			// if (@$_POST['search']['value']) {
-			// 	$params .= '&keyword='.@$_POST['search']['value'];
-			// }
-
-			$api = api('article'.$params, null, 'GET');
-
-
+	$params = '?status=Publish';
+		$api = api('article'.$params, null, 'GET');
+		if ($api) {
 			$rowperpage = $this->input->post('length') ? $this->input->post('length') : 9 ;
 			$this->load->library('pagination');
 			$choice = $api['total'] / $rowperpage;
@@ -57,12 +45,17 @@ class Preview extends CI_Controller {
 
 			$params .= '&limit='.$limit."&offset=".$start;
 			$api = api('article'.$params, null, 'GET');
-			$data = [
-				'pagination' => $this->pagination->create_links(),
-				'title' => "Preview Article",
-				'data' => $api['data']
-			];
-			$this->template->load("templates/adminPage", 'pages/posts/preview-data', $data);
+		}else{
+
+		}
+
+
+		$data = [
+			'pagination' => $api ? $this->pagination->create_links() : null,
+			'title' => "Preview Article",
+			'data' => $api ? $api['data'] : null
+		];
+		$this->template->load("templates/adminPage", 'pages/posts/preview-data', $data);
 	}
 
 

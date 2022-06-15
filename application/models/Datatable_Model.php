@@ -19,7 +19,9 @@ class Datatable_Model extends CI_Model {
 
 		if ($this->input->post('order')) {
 			$column_order = [null,'title', 'category'];
-			$params .= "&order_by=".$column_order[$this->input->post('order')['0']['column']]."&sort_by=".$this->input->post('order')['0']['dir'];
+			if ($this->input->post('order')['0']['column'] != 0) {
+				$params .= "&order_by=".$column_order[$this->input->post('order')['0']['column']]."&sort_by=".$this->input->post('order')['0']['dir'];
+			}
 		}
 
 		if ($this->input->post('search')['value']) {
