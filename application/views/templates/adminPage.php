@@ -41,11 +41,6 @@
         </svg>
       </div>
       <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
-        <!-- <li class="nav-item"><a class="nav-link" href="<?= base_url('dashboard') ?>">
-            <svg class="nav-icon">
-              <use xlink:href="<?= _assets() ?>/vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
-            </svg> Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a>
-          </li> -->
         <li class="nav-title">Data</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
 
@@ -55,9 +50,14 @@
           <ul class="nav-group-items">
             <li class="nav-item"><a class="nav-link" href="<?= base_url('posts') ?>"><span class="nav-icon"></span> All Posts</a></li>
             <li class="nav-item"><a class="nav-link" href="<?= base_url('posts/new') ?>"><span class="nav-icon"></span> Add New</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?= base_url('posts/preview') ?>"><span class="nav-icon"></span> Preview</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="<?= base_url('posts/preview') ?>"><span class="nav-icon"></span> Preview</a></li> -->
           </ul>
         </li>
+        <li class="nav-item"><a class="nav-link" href="<?= base_url('preview') ?>">
+            <svg class="nav-icon">
+              <use xlink:href="<?= _assets() ?>/vendors/@coreui/icons/svg/free.svg#cil-monitor"></use>
+            </svg> Preview</a>
+          </li>
       </ul>
       <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
     </div>
@@ -72,25 +72,6 @@
             <svg width="118" height="46" alt="CoreUI Logo">
               <use xlink:href="<?= _assets() ?>/assets/brand/coreui.svg#full"></use>
             </svg></a>
-          <ul class="header-nav d-none d-md-flex">
-            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-          </ul>
-          <ul class="header-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use xlink:href="<?= _assets() ?>/vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
-                </svg></a></li>
-            <li class="nav-item"><a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use xlink:href="<?= _assets() ?>/vendors/@coreui/icons/svg/free.svg#cil-list-rich"></use>
-                </svg></a></li>
-            <li class="nav-item"><a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use xlink:href="<?= _assets() ?>/vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
-                </svg></a></li>
-          </ul>
           <ul class="header-nav ms-3">
             <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-md"><img class="avatar-img" src="<?= _assets() ?>/assets/img/avatars/8.jpg" alt="user@email.com"></div>

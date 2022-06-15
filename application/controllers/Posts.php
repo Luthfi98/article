@@ -158,6 +158,7 @@ class Posts extends CI_Controller {
 					'category' => $this->input->post('category'),
 					'status' => $this->input->post('status'),
 				];
+				// var_dump($data);die;
 				$insert = api('article/'.$id, $data, "POST");
 				$response['error'] = getErrorValidation();
 				$response['status'] = true;

@@ -29,8 +29,8 @@
         <div class="card-body">
           <h5 class="card-title text-center"><?= $dt['title'] ?></h5>
           <h6 class="card-subtitle mb-2 text-medium-emphasis"><?= $dt['category'] ?></h6>
-          <p class="card-text"><?= substr($dt['content'], 0,50)."..." ?>
-            <a class="card-link" href="<?= base_url('posts/detail/'.$dt['id']) ?>">View More</a>
+          <p class="card-text"><?= substr(strip_tags($dt['content']), 0,50)."..." ?>
+            <a class="card-link" href="<?= base_url('preview/detail/'.$dt['id']) ?>">View More</a>
           </p>
           <!-- <a class="card-link" href="#">Another link</a> -->
         </div>

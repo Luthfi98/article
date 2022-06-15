@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $route['default_controller'] = 'Posts/index';
+$route['preview/(:any)'] = 'Preview/index';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

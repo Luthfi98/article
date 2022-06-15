@@ -19,8 +19,8 @@
           <span class="text-danger category_error"></span>
         </div>
         <div class="form-group mb-3">
-          <label class="form-label" for="status">Status</label>
-          <input type="text" name="category" id="category" readonly value="<?= $data['status'] ?>" class="form-control">
+          <label class="form-label" for="old_status">Status</label>
+          <input type="text" name="old_status" id="old_status" readonly value="<?= $data['status'] ?>" class="form-control">
         </div>
       </div>
       <div class="card-footer">
@@ -30,8 +30,26 @@
     </form>
   </div>
 </div>
+<script src="<?= _assets()?>/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<?= _assets()?>/vendors/summernote/summernote-bs4.min.css">
+<script src="<?= _assets()?>/vendors/summernote/summernote-bs4.min.js"></script>
+
 
 <script>
+
+    $('#content').summernote({
+      height: "300px",
+      toolbar:[
+        ['style', ['undo','redo', 'bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        // ['fontsize', ['fontname','fontsize']],
+        // ['color', ['color']],
+        ['para', ['ul', 'ol']],
+        // ['height', ['height']],
+        ['insert', ['link', 'hr']],
+        ['misc', ['fullscreen']]
+      ],
+    })
   $('.btn-submit').click(function(e){
     e.preventDefault("submit")
     var status = $(this).data('status')

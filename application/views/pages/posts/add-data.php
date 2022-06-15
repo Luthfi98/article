@@ -27,7 +27,27 @@
   </div>
 </div>
 
+<script src="<?= _assets()?>/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<?= _assets()?>/vendors/summernote/summernote-bs4.min.css">
+<script src="<?= _assets()?>/vendors/summernote/summernote-bs4.min.js"></script>
+
+
 <script>
+
+    $('#content').summernote({
+      height: "300px",
+      toolbar:[
+        ['style', ['undo','redo', 'bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        // ['fontsize', ['fontname','fontsize']],
+        // ['color', ['color']],
+        ['para', ['ul', 'ol']],
+        // ['height', ['height']],
+        ['insert', ['link', 'hr']],
+        ['misc', ['fullscreen']]
+      ],
+    })
+
   $('.btn-submit').click(function(e){
     e.preventDefault("submit")
     var status = $(this).data('status')
