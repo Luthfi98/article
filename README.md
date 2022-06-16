@@ -1,5 +1,21 @@
-# Installation
+## Installation
+- Clone Project
+    ```
+    git clone https://github.com/Luthfi98/article.git
+    ```
+- Pindahkan Ke Folder
 
-- git clone https://github.com/Luthfi98/article.git
-- pindahkan ke c:/xampp/htdocs/
-- buka http://localhost/article
+    XAMPP <br>
+		```
+		c:/xampp/htdocs/
+		```
+		<br>
+		Laragon <br>
+		```
+		c:/laragon/www/
+		```
+- Buka Website <br>
+		[Article](http://localhost/article) <br>
+		```
+		http://localhost/article
+		```
