@@ -25,7 +25,7 @@ class Datatable_Model extends CI_Model {
 		}
 
 		if ($this->input->post('search')['value']) {
-			$params .= '&keyword='.$this->input->post('search')['value'];
+			$params .= '&keyword='.str_replace(" ", "%20", $this->input->post('search')['value']);
 		}
 		$api = api('article'.$params, $data, 'GET');
 		return $api;
