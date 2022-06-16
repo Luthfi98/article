@@ -75,14 +75,7 @@ class Posts extends CI_Controller {
 
 	public function delete($id)
 	{
-		$api = api('article/'.$id, null, 'GET')['data']['article'];
-		$data = [
-			'title' => $api['title'],
-			'content' => $api['content'],
-			'category' => $api['category'],
-			'status' => "Trash",
-		];
-		$insert = api('article/'.$id, $data, "POST");
+		$insert = api('article/'.$id, null, "DELETE");
 		redirect('posts','refresh');
 	}
 
